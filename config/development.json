@@ -1,0 +1,135 @@
+{
+    "siteFrontEndUrl": "https://cart2-dev.aws.autodesk.com",
+    "serverConfig": {
+        "port": 3001,
+        "workerCount": 0,
+        "environmentName": "Dev"
+    },
+    "pelican": {
+        "hostname": "pelican-dev-lb-new-1388360405.us-west-1.elb.amazonaws.com",
+        "port": "",
+        "useHttp": "true",
+        "partnerId": "$apiactor",
+        "apiSecret": "Api123$%^",
+        "apiAccessKey": "0O268Q55OGa",
+        "appFamilyId": "8888",
+        "path": "/tfel2rs/v2",
+        "timeout": 15000,
+        "healthpath": "/healthCheck"
+    },
+    "logging": {
+        "exitOnError": false,
+        "exception_path": "/home/bicuser/logs/node/amart_exception.log",
+        "subjects" : ["userExtKey", "userId", "offeringId", "subId", "country", "timestamp"],
+        "types" : {
+            "application": {
+                "console": {
+                    "level": "none",
+                    "colorize": false
+                },
+                "dailyRotateFile": {
+                    "timestamp": true,
+                    "json": true,
+                    "filename": "/home/bicuser/logs/node/amart-application.log",
+                    "maxsize": 24000000,
+                    "level": "debug"
+                }
+            },
+            "payload": {
+                "console": {
+                    "level": "none",
+                    "colorize": false
+                },
+                "dailyRotateFile": {
+                    "timestamp": true,
+                    "json": true,
+                    "filename": "/home/bicuser/logs/node/amart-payload.log",
+                    "maxsize": 24000000,
+                    "level": "debug"
+                }
+            }
+        }
+    },
+    "oxygen": {
+        "method": "GET",
+        "url": "https://accounts-dev.autodesk.com/api/accounts/v1/user/",
+        "host": "accounts-dev.autodesk.com",
+        "useHttp": "false",
+        "format": "json",
+        "oauth_consumer_key": "e09cf2f4-c811-4216-9ba2-c1d856a56417",
+        "oauth_consumer_secret": "bd621e3c-610a-4739-9007-8355ed71f781",
+        "oauth_signature_method": "HMAC-SHA1",
+        "oauth_nonce": "49545422044683",
+        "oauth_version": "1.0",
+        "timeout": 15000,
+        "healthpath": "/health"
+    },
+    "ucmGetProfile": {
+        "host": "uspetddmwtib01.autodesk.com",
+        "port": "4098",
+        "useHttp": "false",
+        "path": "/rest/v1/party/identitylookup",
+        "timeout" : 5000,
+        "clientCertPath" : "./ssl/ucm/bic-dev-client.pfx",
+        "clientCertPwd" : "TLJ1sdTU9oGmewUf82q0"
+    },
+    "partner": {
+        "gmtDateFormat": "GMT:yyyy-mm-dd'T'HH:MM:ss'Z'",
+        "clic": {
+            "secretAccessKey": "b0Ydty{3*K4}T%h2Bs#@>r8*h77XGlHs",
+            "expires": 1209600,
+            "origin": "IPP"
+        },
+        "cep": {
+            "secretAccessKey": "T932u(sI38RI,]m8MKi3TmIzB*8gn5prt",
+            "expires": 2591600,
+            "origin": "PORTAL"
+        },
+        "estore":{
+            "origin": "ESTORE"
+        }
+    },
+    "payport": {
+        "hostname": "internal-adsk-bic-dev2-payport-1830039084.us-east-1.elb.amazonaws.com",
+        "port": "",
+        "useHttp": "true",
+        "path": "/services/v1",
+        //"clientCertPath" : "./ssl/payport/amart2payport-dev.pfx",
+        //"clientCertPwd" : "Bic!Payport@Amart#Dev$",
+        "timeout": 30000,
+        "healthpath": "/health"
+    },
+    "sessionConfig": {
+        "redisNode": {
+            "hostname": "adsk-bic-dev-redis.kawflh.ng.0001.use1.cache.amazonaws.com",
+            "port": 6379
+        },
+        "sessionTtl": 1800000,
+        "grantTokenTtl":600000,
+        "statusUnauthorized": 401,
+        "statusGrantTokenExpired": 299,
+        "statusOK": 200
+    },
+    "openidConfig": {
+        "siteServiceLayerUrl" : "https://cart2-dev.aws.autodesk.com",
+        "providerUrl" : "https://accounts-dev.autodesk.com",
+        "customcss" : "https://cart2-dev.aws.autodesk.com/styles/core.css"
+    },
+    "corsEnabled": true,
+    "amartSignature": "6eb81396-67e1-49ce-99f7-7fb367bf9dcc",
+    "cart":{
+        "cartStorageExpiration": 1000,
+        "maxCartItemQuantity": 998
+    },
+    "connectionAgentOptions":{
+        "maxSockets" : 25,
+        "maxFreeSockets": 5,
+        "keepAlive" : true,
+        "keepAliveMsecs" : 50000
+    },
+    "store":{
+        "cacheStoreTtl": 300000
+    },
+    "cacheEnabled":true,
+    "hstsMaxAge" : 3600
+}

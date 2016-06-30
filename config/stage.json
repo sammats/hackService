@@ -1,0 +1,145 @@
+{
+    "siteFrontEndUrl": "https://cart-stg.aws.autodesk.com",
+    "serverConfig": {
+        "port": 3001,
+        "workerCount": 0,
+        "environmentName": "Stage"
+    },
+    "pelican": {
+        "hostname": "pelican-stg-2091252326.us-east-1.elb.amazonaws.com",
+        "port": "",
+        "useHttp": "false",
+        "partnerId": "$amartactor",
+        "apiSecret": "78sDEXag",
+        "apiAccessKey": "0O268Q55OGa",
+        "appFamilyId": "9999",
+        "path": "/tfel2rs/v2",
+        "timeout": 15000,
+        "healthpath": "/healthCheck"
+    },
+    "logging": {
+        "exitOnError": false,
+        "exception_path": "/home/bicuser/logs/node/amart_exception.log",
+        "subjects" : ["userExtKey", "userId", "offeringId", "subId", "country", "timestamp"],
+        "types" : {
+            "application": {
+                "console": {
+                    "level": "none",
+                    "colorize": false
+                },
+                "dailyRotateFile": {
+                    "timestamp": true,
+                    "json": true,
+                    "filename": "/home/bicuser/logs/node/amart-application.log",
+                    "maxsize": 24000000,
+                    "level": "debug"
+                }
+            },
+            "payload": {
+                "console": {
+                    "level": "none",
+                    "colorize": false
+                },
+                "dailyRotateFile": {
+                    "timestamp": true,
+                    "json": true,
+                    "filename": "/home/bicuser/logs/node/amart-payload.log",
+                    "maxsize": 24000000,
+                    "level": "debug"
+                }
+            }
+        }
+    },
+    "oxygen": {
+        "method": "GET",
+        "url": "https://accounts-staging.autodesk.com/api/accounts/v1/user/",
+        "host": "accounts-staging.autodesk.com",
+        "useHttp": "false",
+        "format": "json",
+        "oauth_consumer_key": "3a933e8c-9fd0-4bbe-8946-9fb16331606e",
+        "oauth_consumer_secret": "3745055a-b9cf-4aa0-9bd9-50bd7cbc92a7",
+        "oauth_signature_method": "HMAC-SHA1",
+        "oauth_nonce": "49545422044683",
+        "oauth_version": "1.0",
+        "timeout": 15000,
+        "healthpath": "/health"
+    },
+    "ucmGetProfile": {
+        "host": "tibappst-vip.autodesk.com",
+        "port": "4098",
+        "useHttp": "false",
+        "path": "/rest/v1/party/identitylookup",
+        "timeout" : 3000,
+        "clientCertPath" : "./ssl/ucm/bic-stg-client.pfx",
+        "clientCertPwd" : "s8vQMzsvhcjddyhRZIx5"
+    },
+    "partner": {
+        "gmtDateFormat": "GMT:yyyy-mm-dd'T'HH:MM:ss'Z'",
+        "clic": {
+            "secretAccessKey": "#2m}qM)959.^A0T3&B40!TE23]y(*HmP",
+            "expires": 1209600,
+            "origin": "IPP"
+        },
+        "cep": {
+            "secretAccessKey": "jtORc3qicl~2Z8WSp#zFnDs}6o8F2&5f",
+            "expires": 1800,
+            "origin": "PORTAL"
+        },
+        "estore":{
+            "origin": "ESTORE"
+        }
+    },
+    "payport": {
+        "hostname": "payport-stg.aws.autodesk.com",
+        "port": "",
+        "useHttp": "false",
+        "path": "/services/v1",
+        "clientCertPath" : "./ssl/payport/amart2payport-stg.pfx",
+        "clientCertPwd" : "myL2ivbHc9F8dXGN",
+        "timeout": 30000,
+        "healthpath": "/health"
+    },
+    "sessionConfig": {
+        "redisNode": {
+                "hostname": "adsk-bic-stg-redis.kawflh.ng.0001.use1.cache.amazonaws.com",
+                "port": 6379
+            },
+        "sessionTtl": 1800000,
+        "grantTokenTtl":600000,
+        "statusUnauthorized": 401,
+        "statusGrantTokenExpired": 299,
+        "statusOK": 200
+    },
+    "openidConfig": {
+        "siteServiceLayerUrl" : "https://cart-stg.aws.autodesk.com",
+        "providerUrl" : "https://accounts-staging.autodesk.com",
+        "customcss" : "https://cart-stg.aws.autodesk.com/styles/main.css"
+    },
+    "amartSignature": "7e959bf9-c72e-4c22-9401-ad32579695ab",
+    "appDynamicsConfig": {
+        "controllerHostName": "autodesk1.saas.appdynamics.com",
+        "controllerPort": 443,
+        "controllerSslEnabled": true,
+        "accountName": "autodesk1",
+        "accountAccessKey": "396b38d3dcd7",
+        "applicationName": "BIC-STG",
+        "tierName": "a-mart-stg",
+        "nodeName": "Node 1 936e-",
+        "debug": false
+    },
+    "cart": {
+        "cartStorageExpiration": 1000,
+        "maxCartItemQuantity": 998
+    },
+    "connectionAgentOptions":{
+        "maxSockets" : 25,
+        "maxFreeSockets": 5,
+        "keepAlive" : true,
+        "keepAliveMsecs" : 50000
+    },
+    "store":{
+        "cacheStoreTtl": 86400000
+    },
+    "cacheEnabled":true,
+    "hstsMaxAge" : 31536000
+}
